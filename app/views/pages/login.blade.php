@@ -78,7 +78,7 @@
                                 <div class="css-blockcontent">
                                     <ul>
                                         <li><b><a href="#">View your products</a></b></li>
-                                        <li><b><a href="#">Add new product</a></b></li>
+                                        <li><b><a href="{{URL::Route('add')}}">Add new product</a></b></li>
                                         <li><b><a href="{{URL::Route('logout')}}">Logout</a></b></li>
                                     </ul>
                                 </div>

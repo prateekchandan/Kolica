@@ -86,4 +86,85 @@ class HomeController extends BaseController {
 		return Redirect::to('/');
 	}
 
+	public function add_product_view(){
+		return View::make('pages.add_product');
+	}
+
+	public function add_product(){
+		$errors = array();
+		if(!Input::has('name')){
+			$errors['name'] = 'Product Name Not Present';
+		}
+		if(!Input::has('desc')){
+			$errors['desc'] = 'Please provide Description';
+		}
+		if(!Input::has('price')){
+			$errors['price'] = 'Price can\'t be empty';
+		}
+		if(!Input::has('category')){
+			$errors['category'] ='Category can\'t be empty';
+		}
+		if(!Input::has('sub-category')){
+			Input::merge(array('sub-category' ,""));
+		}
+		if(!Input::has('email')){
+			Input::merge(array('email' ,""));
+		}
+		if(!Input::has('phone')){
+			Input::merge(array('phone' ,""));
+		}
+		if(!Input::hasFile('image')){
+			$errors['image'] = 'Please upload image';
+		}
+		if(!(substr(Input::file('image')->getMimeType(), 0, 5) == 'image')) {
+		    $errors['image'] = 'The file is not an Image';
+		}
+		if (!Input::file('image')->isValid())
+		{
+		    $errors['image'] = 'Invalid image';
+		}
+		
+
+		if(sizeof($errors) > 0)
+			return Redirect::back()->with($errors);
+
+		$p = new Product;
+		$p->name = Input::get('name');
+		$p->desc = Input::get('desc');
+		$p->id = Auth::user()->id;
+		$p->category = Input::get('category');
+		$p->sub_category = Input::get('sub-category');
+		$p->email = Input::get('email');
+		$p->phone = Input::get('phone');
+		$p->save();
+		$destinationPath = public_path().'/images/product';
+		$pid = $p->id;
+		$fileName = $p->id.'.'.Input::file('image')->getClientOriginalExtension();
+		Input::file('image')->move($destinationPath, $fileName);
+		$p = Product::where('product_id','=',$pid)->update(array('img'=>URL::asset('images/product/'.$fileName)));
+		return Redirect::back()->with('success' , 'Product Added Successfully');
+
+	}
+
+	function category($cat , $subcat =""){
+		$heading = "Products from ".$cat;
+		if($subcat == "")
+			$products = Product::where('category' , '=' , $cat)->get();
+		else{
+			$products = Product::where('sub_category' , '=' , $subcat)->get();
+			$heading=" Products from  ".$subcat." in ".$cat;
+		}
+
+		View::share("heading" ,$heading);
+		View::share("products" ,$products);
+
+		return View::make('pages.products');
+	}
+
+	function product($pid){
+		$p = Product::where('product_id',  '=' , $pid)->first();
+		View::share('p',$p);
+		return View::make('pages.product');
+	}
+
 }

@@ -9,13 +9,13 @@
     "initial-scale = 1.0, maximum-scale = 1.0, user-scalable = no, width = device-width"
     name="viewport">
     <!--[if lt IE 9]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <link href="style.css" media="screen" rel="stylesheet">
+    <link href="{{URL::asset('style.css')}}" media="screen" rel="stylesheet">
     <!--[if lte IE 7]><link rel="stylesheet" href="style.ie7.css" media="screen" /><![endif]-->
-    <link href="style.responsive.css" media="all" rel="stylesheet">
-    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <script src="jquery.js"></script>
-    <script src="script.js"></script>
-    <script src="script.responsive.js"></script>
+    <link href="{{URL::asset('style.responsive.css')}}" media="all" rel="stylesheet">
+    <link href="{{URL::asset('favicon.ico')}}" rel="shortcut icon" type="image/x-icon">
+    <script src="{{URL::asset('jquery.js')}}"></script>
+    <script src="{{URL::asset('script.js')}}"></script>
+    <script src="{{URL::asset('script.responsive.js')}}"></script>
     <meta content=
     "Sve za bebu, protal namenjen mladim roditeljima da razmene i prodaju bebi opremu kada ih njihove bebe prerastu :)"
     name="description">
@@ -49,76 +49,76 @@
                 <ul class="css-hmenu">
                     <li>
                         <a class="" href=
-                        "svezabebu-online-shop-za-bebe.html">Početna</a>
+                        "{{URL::to('/')}}/category/Pocetna">Početna</a>
                     </li>
 
                     <li>
-                        <a href="oprema-za-bebe.html">Oprema</a>
+                        <a href="{{URL::to('/')}}/category/Oprema">Oprema</a>
 
                         <ul>
                             <li>
                                 <a href=
-                                "oprema-za-bebe/kolica-za-bebu.html">Kolica</a>
+                                "{{URL::to('/')}}/category/Oprema/Kolica">Kolica</a>
                             </li>
 
                             <li>
                                 <a href=
-                                "oprema-za-bebe/auto-sedista-za-bebe.html">Auto
+                                "{{URL::to('/')}}/category/Oprema/Auto%20sedista%20za%20bebe">Auto
                                 sedišta za bebe</a>
                             </li>
 
                             <li>
                                 <a href=
-                                "oprema-za-bebe/nosilice-za-bebu.html">Nosilice</a>
+                                "{{URL::to('/')}}/category/Oprema/Nostilice">Nosilice</a>
                             </li>
 
                             <li>
                                 <a href=
-                                "oprema-za-bebe/stolice-za-hranjenje-bebe.html">
+                                "{{URL::to('/')}}/category/Oprema/Stolice%20za%20hranjenje">
                                 Stolice za hranjenje</a>
                             </li>
 
                             <li>
                                 <a href=
-                                "oprema-za-bebe/ostalo-bebi-oprema.html">Ostalo</a>
+                                "#">Ostalo</a>
                             </li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="soba-za-bebu.html">Soba</a>
+                        <a href="{{URL::to('/')}}/category/Soba">Soba</a>
 
                         <ul>
                             <li>
                                 <a href=
-                                "soba-za-bebu/krevetici-za-bebu.html">Krevetici</a>
+                                "{{URL::to('/')}}/category/Soba/Krevetici">Krevetici</a>
                             </li>
 
                             <li>
                                 <a href=
-                                "soba-za-bebu/ogradice-za-igru-bebe.html">Ogradice
+                                "{{URL::to('/')}}/category/Soba/Ogradice%20za%20igru">Ogradice
                                 za igru</a>
                             </li>
 
                             <li>
                                 <a href=
-                                "soba-za-bebu/stolice-za-ljuljanje-bebe.html">Stolice
+                                "{{URL::to('/')}}/category/Soba/Stolice%20za%20ljuljanje">Stolice
                                 za ljuljanje</a>
                             </li>
 
                             <li>
                                 <a href=
-                                "soba-za-bebu/namestaj-za-bebu.html">Nameštaj</a>
+                                "{{URL::to('/')}}/category/Soba/Namestaj">Nameštaj</a>
                             </li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="odeca-za-bebu.html">Odeća</a>
+                        <a href="{{URL::to('/')}}/category/Odeca">Odeća</a>
                     </li>
 
                     <li>
-                        <a href="kontakt.html">Kontakt</a>
+                        <a href="#">Kontakt</a>
                     </li>
                 </ul>
             </div>
