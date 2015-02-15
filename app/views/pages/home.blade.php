@@ -17,7 +17,7 @@
 
                                 <div class="css-blockcontent">
                                     <div>
-                                        <form action="{{URL::Route('login')}}" class="css-search" id=
+                                        <form action="#" class="css-search" id=
                                         "searchform" method="get" name=
                                         "searchform">
                                             <input name="s" type="text" value=
