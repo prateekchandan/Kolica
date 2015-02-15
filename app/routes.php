@@ -25,3 +25,7 @@ Route::get('category/{cat}/{subcat?}', array('as' => 'category' , 'uses' => 'Hom
 Route::get('Product/{pid}', array('as' => 'product' , 'uses' => 'HomeController@product'));
 
 
+Route::any('my-products', array('before' => 'user' ,'as' => 'myproducts' , 'uses' => 'HomeController@my'));
+
+Route::post('edit/{pid}', array('before' => 'user' ,'as' => 'edit' , 'uses' => 'HomeController@edit_save'));
+Route::get('edit/{pid}', array('before' => 'user' ,'as' => 'edit' , 'uses' => 'HomeController@edit'));

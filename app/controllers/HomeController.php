@@ -136,6 +136,7 @@ class HomeController extends BaseController {
 		$p->sub_category = Input::get('sub-category');
 		$p->email = Input::get('email');
 		$p->phone = Input::get('phone');
+		$p->price = Input::get('price');
 		$p->save();
 		$destinationPath = public_path().'/images/product';
 		$pid = $p->id;
@@ -165,6 +166,89 @@ class HomeController extends BaseController {
 		$p = Product::where('product_id',  '=' , $pid)->first();
 		View::share('p',$p);
 		return View::make('pages.product');
+	}
+
+	function edit($pid){
+		$p = Product::where('product_id',  '=' , $pid)->first();
+		if(is_null($p))
+			return Redirect::to('/');
+		if($p->id != Auth::user()->id)
+			return Redirect::to('/');
+
+		View::share('p',$p);
+		return View::make('pages.edit');
+	}
+
+	function edit_save($pid){
+		$p = Product::where('id' , '=' , Auth::user()->id)->first();
+		
+
+		if(is_null($p))
+			return Redirect::to('/');
+		if($p->id != Auth::user()->id)
+			return Redirect::to('/');
+
+		$errors = array();
+		if(!Input::has('name')){
+			$errors['name'] = 'Product Name Not Present';
+		}
+		if(!Input::has('desc')){
+			$errors['desc'] = 'Please provide Description';
+		}
+		if(!Input::has('price')){
+			$errors['price'] = 'Price can\'t be empty';
+		}
+		if(!Input::has('category')){
+			$errors['category'] ='Category can\'t be empty';
+		}
+		if(!Input::has('sub-category')){
+			Input::merge(array('sub-category' ,""));
+		}
+		if(!Input::has('email')){
+			Input::merge(array('email' ,""));
+		}
+		if(!Input::has('phone')){
+			Input::merge(array('phone' ,""));
+		}
+		if(Input::hasFile('image')){
+			if(!(substr(Input::file('image')->getMimeType(), 0, 5) == 'image')) {
+		    $errors['image'] = 'The file is not an Image';
+			}
+			if (!Input::file('image')->isValid())
+			{
+			    $errors['image'] = 'Invalid image';
+			}
+		}
+
+		if(sizeof($errors) > 0)
+			return Redirect::back()->with($errors);
+
+		Product::where('product_id','=',$pid)->update(array(
+			'name' => Input::get('name'),
+			'desc' => Input::get('desc'),
+			'category' => Input::get('category'),
+			'sub_category' => Input::get('sub-category'),
+			'email' => Input::get('email'),
+			'phone' => Input::get('phone'),
+			'price' => Input::get('price'),
+		));
+
+
+		if(Input::hasFile('image')){
+			$destinationPath = public_path().'/images/product';
+			$pid = $p->product_id;
+			$fileName = $pid.'.'.Input::file('image')->getClientOriginalExtension();
+			Input::file('image')->move($destinationPath, $fileName);
+			$p = Product::where('product_id','=',$pid)->update(array('img'=>URL::asset('images/product/'.$fileName)));
+		}
+		return Redirect::back()->with('success' , 'Product Edited Successfully');
+
+	}
+
+	function my(){
+		$p = Product::where('id' , '=' , Auth::user()->id)->get();
+		View::share('p1',$p);
+		return View::make('pages.myproduct');
 	}
 
 }

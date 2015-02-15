@@ -23,6 +23,7 @@ class Product extends Migration {
 			$table->string('sub_category', 200)->nullable();
 			$table->string('img', 400)->nullable();
 			$table->integer('id')->unsigned();
+			$table->integer('price')->unsigned();
 			$table->timestamps();
 			$table->foreign('id')->references('id')->on('users');
 		});
