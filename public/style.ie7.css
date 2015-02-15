@@ -1,0 +1,127 @@
+/* Created by Artisteer v4.1.0.59861 */
+
+.css-header, #css-header-bg, .css-layout-cell, .css-layout-wrapper, .css-footer, .css-nav, #css-hmenu-bg, .css-sheet,
+.clearfix {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+
+.css-textblock > div {
+   display: block;
+   line-height: normal;
+   zoom: 1;
+}
+
+.css-header
+{
+   z-index: 1;
+   background-image: [headerimage];
+   background-position: [headerposition];
+}
+
+#css-header-bg 
+{
+   display: none;
+}
+
+.css-hmenu>li, .css-hmenu>li>a
+{
+   display: inline !important;
+   zoom: 1;
+   float: none !important;
+   vertical-align: top;
+}
+ul.css-hmenu, ul.css-hmenu ul {
+   zoom: expression(this.runtimeStyle.zoom="1", this.appendChild(document.createElement("br")).className="cleared");
+}
+#css-hmenu-bg 
+{
+   display: none;
+}
+
+ul.css-hmenu>li:first-child {
+   padding-right:3px;
+}
+ul.css-hmenu>li{
+   zoom:expression(runtimeStyle.zoom=1,insertBefore(document.createElement('span'),firstChild).className='css-hmenu-separator');
+}
+ul.css-hmenu>li>span.css-hmenu-separator
+{
+   position:absolute;
+   display: block;
+   top:0;
+   left:  -3px;
+   width: 3px;
+   height: 31px;
+   background: url('images/menuseparator.png') center center no-repeat;
+}
+ul.css-hmenu>li:first-child>span.css-hmenu-separator
+{
+   display:none;
+}
+
+ul.css-hmenu ul{
+   background-color: #85C2E5 !important;
+}
+
+.css-content-layout, .css-content-layout-row, .css-layout-cell 
+{
+   display: block;
+   zoom: 1;
+}
+.css-layout-cell
+{
+   position:relative;
+   float: left;
+   clear: right;
+}
+
+input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+* html input[type="text"]
+{
+   margin :0;
+}
+
+form.css-search>input[type="text"]
+{
+   margin:0 0 0 -3px;
+   zoom:expression(runtimeStyle.zoom = 1, parentNode.insertBefore(document.createElement('div'), this).appendChild(this));
+}
+
+form.css-search div>input[type="text"]
+{
+   width: 100%;
+}
+
+* html form.css-search>input[type="text"] 
+{
+   margin :0;
+}
+
+.css-postheadericons span{
+   zoom: 1;
+}
+.css-postcontent {
+   height: 1%;
+}
+
+.css-postfootericons span{
+   zoom: 1;
+}
+.close-alt, .arrow-right-alt, .arrow-left-alt {
+   display: block !important;
+}
+.cw, .ccw {
+   display: none !important;
+}
+
+.css-sidebar2 
+{
+   width: auto;
+   float:none;
+}
+
