@@ -29,3 +29,4 @@ Route::any('my-products', array('before' => 'user' ,'as' => 'myproducts' , 'uses
 
 Route::post('edit/{pid}', array('before' => 'user' ,'as' => 'edit' , 'uses' => 'HomeController@edit_save'));
 Route::get('edit/{pid}', array('before' => 'user' ,'as' => 'edit' , 'uses' => 'HomeController@edit'));
+Route::get('delete/{pid}', array('before' => 'user' ,'as' => 'delete' , 'uses' => 'HomeController@delete'));

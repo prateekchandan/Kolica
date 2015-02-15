@@ -41,6 +41,7 @@
                                    <tr> <td>{{$key+1}}</td>
                                         <td><a href="{{URL::to('/')}}/Product/{{$p->product_id}}">{{$p->name}}</a></td>
                                         <td><span style="margin-left:10px"><a href="{{URL::to('/')}}/edit/{{$p->product_id}}">Edit</a></span></td>
+                                        <td><span style="margin-left:10px"><a href="{{URL::to('/')}}/delete/{{$p->product_id}}" style="color:red">Delete</a></span></td>
                                     </tr>
                                    @endforeach
                                </table>

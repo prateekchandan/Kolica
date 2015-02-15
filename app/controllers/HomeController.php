@@ -251,4 +251,8 @@ class HomeController extends BaseController {
 		return View::make('pages.myproduct');
 	}
 
+	function delete($pid){
+		$p = Product::where('product_id','=',$pid)->delete();
+		return Redirect::route('myproducts');
+	}
 }
