@@ -47,7 +47,7 @@
                                         	   <img class="img" src="{{URL::asset($product->img)}}">
                                             </a>
                                         </p>
-                                        <p><a href="{{URL::to('/')}}/Product/{{$product->product_id}}">{{$product->name}}</a></p>
+                                        <p><b><a href="{{URL::to('/')}}/Product/{{$product->product_id}}">{{$product->name}}</a></b></p>
                                         <p><b>Price (in RSD) : {{$product->price}}</b></p>
 										<p><br></p>
                                     </div>
