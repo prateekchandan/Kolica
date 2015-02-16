@@ -32,8 +32,8 @@
                                 <div>
                                     <img class="img" src="{{$p->img}}">
                                 </div>
-                                @if($p->id == Auth::user()->id)
-                                <p><a href="{{URL::to('/')}}/edit/{{$p->id}}">Edit this product</a></p><br>
+                                @if(Auth::check() && $p->id == Auth::user()->id)
+                                <p><a href="{{URL::to('/')}}/edit/{{$p->product_id}}">Edit this product</a></p><br>
                                 @endif
                                 <b>Price (in RSD) : {{$p->price}}</b><br><br>
                                 <b>Category : </b><a href="{{URL::to('/')}}/category/{{$p->category}}">{{$p->category}}</a><br><br>
