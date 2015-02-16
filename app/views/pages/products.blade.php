@@ -48,6 +48,7 @@
                                             </a>
                                         </p>
                                         <p><a href="{{URL::to('/')}}/Product/{{$product->product_id}}">{{$product->name}}</a></p>
+                                        <p><b>Price (in RSD) : {{$product->price}}</b></p>
 										<p><br></p>
                                     </div>
                                  @if(($key+1)%3 == 0)
