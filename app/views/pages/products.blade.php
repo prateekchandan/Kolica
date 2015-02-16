@@ -4,9 +4,8 @@
         
 <style type="text/css">
 	.img{
-        width: 80%;
-		height:auto;
-        max-height: 200px;
+        width: 140px;
+        height: 140px;
 	}
     .own-block{
         width: 33%;
