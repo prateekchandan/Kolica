@@ -8,7 +8,7 @@
         height: 140px;
 	}
     .own-block{
-        width: 33%;
+        width: 30%;
     }
 </style>
 
