@@ -4,9 +4,9 @@
         
 <style type="text/css">
 	.img{
-		max-height: 200px;
-        max-width: 300px;
-		width:auto;
+        width: 80%;
+		height:auto;
+        max-height: 200px;
 	}
 </style>
 
@@ -39,7 +39,7 @@
                                     "css-content-layout layout-item-0">
                                     <div class="css-content-layout-row">
                                 @endif
-                                	<div class="css-layout-cell layout-item-1" style="width: 33%">
+                                	<div class="css-layout-cell layout-item-1" style="width: 33%;display:block">
                                         <p>
                                             <a href="{{URL::to('/')}}/Product/{{$product->product_id}}">
                                         	   <img class="img" src="{{URL::asset($product->img)}}">
