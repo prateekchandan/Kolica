@@ -41,7 +41,7 @@
                                     "css-content-layout layout-item-0">
                                     <div class="css-content-layout-row">
                                 @endif
-                                	<div class="css-layout-cell layout-item-1 own-block">
+                                	<div class="css-layout-cell layout-item-1 own-block" {{(sizeof($products)%3 !=0 && $key == sizeof($products) -1)?'style="display:block"':""}}>
                                         <p>
                                             <a href="{{URL::to('/')}}/Product/{{$product->product_id}}">
                                         	   <img class="img" src="{{URL::asset($product->img)}}">
