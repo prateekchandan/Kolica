@@ -8,6 +8,10 @@
 		height:auto;
         max-height: 200px;
 	}
+    .own-block{
+        width: 33%;
+        float: left;
+    }
 </style>
 
         <div class="css-sheet clearfix">
@@ -39,7 +43,7 @@
                                     "css-content-layout layout-item-0">
                                     <div class="css-content-layout-row">
                                 @endif
-                                	<div class="css-layout-cell layout-item-1" style="width: 33%;display:block">
+                                	<div class="css-layout-cell layout-item-1 own-block">
                                         <p>
                                             <a href="{{URL::to('/')}}/Product/{{$product->product_id}}">
                                         	   <img class="img" src="{{URL::asset($product->img)}}">
