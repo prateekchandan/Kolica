@@ -10,7 +10,6 @@
 	}
     .own-block{
         width: 33%;
-        float: left;
     }
 </style>
 
