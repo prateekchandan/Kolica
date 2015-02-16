@@ -49,7 +49,7 @@
                 <ul class="css-hmenu">
                     <li>
                         <a class="" href=
-                        "{{URL::to('/')}}/category/Pocetna">Početna</a>
+                        "{{URL::to('/')}}">Početna</a>
                     </li>
 
                     <li>
@@ -116,7 +116,11 @@
                     <li>
                         <a href="{{URL::to('/')}}/category/Odeca">Odeća</a>
                     </li>
-
+                    @if(Auth::check())
+                    <li>
+                        <a href="{{URL::Route('add')}}">Postavite oglas</a>
+                    </li>
+                    @endif
                     <li>
                         <a href="#">Kontakt</a>
                     </li>

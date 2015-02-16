@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function home()
 	{
-		return View::make('pages.home');
+		return $this->Category("Pocetna");
 	}
 
 
@@ -149,7 +149,11 @@ class HomeController extends BaseController {
 
 	function category($cat , $subcat =""){
 		$heading = "Products from ".$cat;
-		if($subcat == "")
+		if($cat == "Pocetna"){
+			$products = Product::get();
+			$heading = "All Products";
+		}
+		else if($subcat == "")
 			$products = Product::where('category' , '=' , $cat)->get();
 		else{
 			$products = Product::where('sub_category' , '=' , $subcat)->get();

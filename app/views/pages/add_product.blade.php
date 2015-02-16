@@ -74,7 +74,7 @@
                                             <input alt="email" class=
                                             "inputbox" id="modlgn_email"
                                             name="email" style="width:100%"
-                                            type="email" required>
+                                            type="email" value="{{Auth::user()->email}}" required>
                                             @if(Session::has('email'))
                                             <span style="color:red">{{Session::get('email')}}</span>
                                             @endif
@@ -86,7 +86,7 @@
                                             <input alt="email" class=
                                             "inputbox" id="modlgn_email"
                                             name="phone" style="width:100%"
-                                            type="text" required >
+                                            type="text" value="{{Auth::user()->phone}}" required >
                                             @if(Session::has('phone'))
                                             <span style="color:red">{{Session::get('phone')}}</span>
                                             @endif
@@ -97,7 +97,6 @@
                                             "modlgn_username">Category</label><br>
                                             <select name="category" id="category" onchange="select_subcat()" required>
                                             	<option value="">Select Category</option>
-                                            	<option>Pocetna</option>
                                             	<option>Oprema</option>
                                             	<option>Soba</option>
                                             	<option>Odeca</option>
