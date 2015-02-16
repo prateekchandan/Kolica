@@ -80,7 +80,7 @@
 
                             <li>
                                 <a href=
-                                "#">Ostalo</a>
+                                "{{URL::to('/')}}/category/Oprema/Ostalo">Ostalo</a>
                             </li>
                         </ul>
                     </li>
